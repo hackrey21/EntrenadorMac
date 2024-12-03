@@ -1,0 +1,84 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #D71F28, #A31620);
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: 0;
+}
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    padding: 2rem;
+}
+.card-header {
+    background: linear-gradient(135deg, #ffcc00, #da291c); /* Degradado amarillo a rojo */
+    color: #ffffff; /* Texto blanco */
+    border-bottom: 2px solid #da291c; /* Borde rojo */
+    border-radius: 15px 15px 0 0; /* Bordes redondeados en la parte superior */
+    padding: 1.5rem;
+    position: relative;
+    text-align: center;
+}
+
+.alert {
+    margin: 0px !important;
+}
+.card-header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 5px;
+    background-color: #ffffff; /* Línea decorativa blanca */
+    border-radius: 5px;
+}
+.card-header h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+.form-control {
+    border-radius: 25px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.btn-primary {
+    background-color: #da291c; /* Rojo de McDonald's */
+    border: none;
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #b62c1b; /* Rojo oscuro */
+}
+.card-footer {
+    background-color: #f8f9fa;
+}
+.form-check-label {
+    font-size: 0.875rem;
+}
+.form-check-input {
+    margin-right: 0.5rem;
+}
+.container {
+    position: relative;
+    z-index: 1;
+}
+.navbar-brand {
+    font-weight: bold;
+    color: #ffee00;
+}
+.navbar-brand span {
+    color: #ffee00;
+}
