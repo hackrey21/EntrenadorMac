@@ -36,7 +36,7 @@ if (isset($_POST['login'])) {
         }
     } else {
         // Si no se encuentra en empleados, buscar en administradores
-        $stmt = $pdo->prepare("SELECT * FROM administrador WHERE Correoelectronico = :correo");
+        $stmt = $pdo->prepare("SELECT * FROM administrador WHERE AEmail = :correo");
         $stmt->bindParam(':correo', $email);
         $stmt->execute();
         $admin = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -49,10 +49,10 @@ if (isset($_POST['login'])) {
 
         if ($admin) {
             // Verificar si la contraseña es correcta (sin cifrado para las contraseñas actuales)
-            if ($password === $admin['Contrasena']) {
+            if ($password === $admin['Apass']) {
                 // Iniciar sesión
-                $_SESSION['session_username'] = $admin['Nombre'];  
-                $_SESSION['session_email'] = $admin['Correoelectronico']; 
+                $_SESSION['session_username'] = $admin['AName'] . ' ' . $admin['ALName'];  
+                $_SESSION['session_email'] = $admin['AEmail']; 
                 $_SESSION['session_role'] = 'administrador'; 
                 echo 'Sesión iniciada correctamente para administrador.';
                 header('Location: index.html');
@@ -65,6 +65,4 @@ if (isset($_POST['login'])) {
             echo "<div class='alert alert-danger'>Usuario no encontrado.</div>";
         }
     }
-} else {
-    echo "<div class='alert alert-info'>Por favor, ingrese sus credenciales.</div>";
 }
